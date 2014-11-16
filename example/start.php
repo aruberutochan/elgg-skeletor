@@ -10,7 +10,8 @@ function example_init() {
 	
 	// Register library
 	$root = dirname(__FILE__);
-	elgg_register_library('skeletor:example', "$root/lib/example.php");
+	elgg_register_library('example', "$root/lib/example.php");
+	elgg_register_library('example:aat', "$root/lib/aat.php");
 
 	// Register a script to handle (usually) a POST request (an action)
 	$base_dir = elgg_get_plugins_path() . 'example/actions/example';
@@ -37,6 +38,7 @@ function example_init() {
 	elgg_set_config('example', array(
 		'title' => 'text',
 		'description' => 'longtext',
+		'auto_add_text' => 'auto_add_text',
 		'tags' => 'tags',
 		'access_id' => 'access',
 		'write_access_id' => 'write_access'
@@ -73,7 +75,7 @@ function example_init() {
  * @return bool
  */
 function example_page_handler($page) {
-	elgg_load_library('skeletor:example');
+	elgg_load_library('example');
 	if (!isset($page[0])) {
 		$page[0] = 'all';
 	}

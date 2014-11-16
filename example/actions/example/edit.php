@@ -12,6 +12,16 @@ $input = array();
 foreach ($variables as $name => $type) {
 	if ($name == 'title') {
 		$input[$name] = htmlspecialchars(get_input($name, '', false), ENT_QUOTES, 'UTF-8');
+	}
+	if ($type == 'auto_add_text') {
+		elgg_load_library('example:aat');
+		$fields = aat_get_not_empty_fields_from_form($name);		
+		$n_fields = aat_get_not_empty_n_fields_from_form($name);
+		$input[$name . '_n'] = $n_fields;
+		foreach ($fields as $num => $field) {
+			$input[$name . '_field_' . $num] = $field;
+		}
+		
 	} else {
 		$input[$name] = get_input($name);
 	}

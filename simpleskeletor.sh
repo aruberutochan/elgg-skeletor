@@ -30,6 +30,7 @@ mkdir -p ${NAME}/actions/${NAME}
 mkdir -p ${NAME}/views/default/river/object/${NAME}
 mkdir -p ${NAME}/views/default/widgets/${NAME}
 mkdir -p ${NAME}/views/default/plugins/${NAME}
+mkdir -p ${NAME}/views/default/input
 cp -r plantillas/images ${NAME}/images
 
 
@@ -48,12 +49,13 @@ cargarPlantilla plantillas/plantilla.pages_view.php ${NAME}/pages/${NAME}/view.p
 cargarPlantilla plantillas/plantilla.views_river_object_create.php ${NAME}/views/default/river/object/${NAME}/create.php
 cargarPlantilla plantillas/plantilla.views_sidebar.php ${NAME}/views/default/${NAME}/sidebar.php
 cargarPlantilla plantillas/plantilla.views_group_module.php ${NAME}/views/default/${NAME}/group_module.php
+cargarPlantilla plantillas/plantilla.views.input.auto_add_text.php ${NAME}/views/default/input/auto_add_text.php
 cargarPlantilla plantillas/plantilla.actions_delete.php ${NAME}/actions/${NAME}/delete.php
 cargarPlantilla plantillas/plantilla.views_widgets_content.php ${NAME}/views/default/widgets/${NAME}/content.php
 cargarPlantilla plantillas/plantilla.views_widgets_edit.php ${NAME}/views/default/widgets/${NAME}/edit.php
 cargarPlantilla plantillas/plantilla.views_plugins_settings.php ${NAME}/views/default/plugins/${NAME}/settings.php
 cargarPlantilla plantillas/plantilla.lib.php ${NAME}/lib/${NAME}.php
-
+cargarPlantilla plantillas/plantilla.lib.aat.php ${NAME}/lib/aat.php
 cargarPlantilla plantillas/plantilla.views_icon.php ${NAME}/views/default/${NAME}/icon.php
 
 

@@ -10,7 +10,8 @@ function [[NAME]]_init() {
 	
 	// Register library
 	$root = dirname(__FILE__);
-	elgg_register_library('skeletor:[[NAME]]', "$root/lib/[[NAME]].php");
+	elgg_register_library('[[NAME]]', "$root/lib/[[NAME]].php");
+	elgg_register_library('[[NAME]]:aat', "$root/lib/aat.php");
 
 	// Register a script to handle (usually) a POST request (an action)
 	$base_dir = elgg_get_plugins_path() . '[[NAME]]/actions/[[NAME]]';
@@ -37,6 +38,7 @@ function [[NAME]]_init() {
 	elgg_set_config('[[NAME]]', array(
 		'title' => 'text',
 		'description' => 'longtext',
+		'auto_add_text' => 'auto_add_text',
 		'tags' => 'tags',
 		'access_id' => 'access',
 		'write_access_id' => 'write_access'
@@ -73,7 +75,7 @@ function [[NAME]]_init() {
  * @return bool
  */
 function [[NAME]]_page_handler($page) {
-	elgg_load_library('skeletor:[[NAME]]');
+	elgg_load_library('[[NAME]]');
 	if (!isset($page[0])) {
 		$page[0] = 'all';
 	}
